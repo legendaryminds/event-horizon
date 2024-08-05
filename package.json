@@ -1,0 +1,26 @@
+{
+  "name": "eventhorizon",
+  "version": "1.0.0",
+  "description": "A full-stack event management application",
+  "main": "server/server.js",
+  "scripts": {
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "dev": "concurrently \"cd client && npm run dev\" \"cd server && npm run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/legendaryminds/event-horizon.git"
+  },
+  "author": "Cynthia Carter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/legendaryminds/event-horizon/issues"
+  },
+  "homepage": "https://github.com/legendaryminds/event-horizon#readme",
+  "dependencies": {
+    "concurrently": "8.2.2"
+  }
+}
