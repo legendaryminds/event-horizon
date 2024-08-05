@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
+const { expressjwt } = require("express-jwt");
 require("dotenv").config();
 const path = require("path");
 
@@ -16,7 +17,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, "../Client/dist")));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 // Function to connect to MongoDB
 async function connectToDb() {
@@ -64,7 +65,7 @@ app.use((err, req, res, next) => {
 
 // Catch-all handler for any requests to the client app
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../Client/dist/index.html"));
+  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
 // Start the server
