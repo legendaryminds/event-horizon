@@ -4,9 +4,11 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 require("dotenv").config();
 const { expressjwt } = require("express-jwt");
+const path = require("path")
 
 // Initialize Express app
 const app = express();
+
 
 // Use cors middleware
 app.use(cors());
@@ -14,6 +16,7 @@ app.use(cors());
 // Middleware for parsing JSON and logging HTTP requests
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(express.static(path.join(__dirname, "client", "dist")))
 
 // Function to connect to MongoDB
 async function connectToDb() {
@@ -58,6 +61,8 @@ app.use((err, req, res, next) => {
     next(err);
   }
 });
+
+app.get("*", (req, res) => res.sendFile(path.join(__dirname, "client", "dist", "index.html")))
 
 // Start the server
 app.listen(process.env.PORT, () => {
