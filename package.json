@@ -2,13 +2,13 @@
   "name": "eventhorizon",
   "version": "1.0.0",
   "description": "A full-stack event management application",
-  "main": "server/server.js",
+  "main": "Server/server.js",
   "scripts": {
-    "install-client": "cd client && npm install",
-    "install-server": "cd server && npm install",
-    "build": "cd client && npm run build",
-    "start": "cd server && npm start",
-    "dev": "concurrently \"cd client && npm run dev\" \"cd server && npm run dev\""
+    "install-client": "cd Client && npm install",
+    "install-server": "cd Server && npm install",
+    "build": "cd Client && npm run build",
+    "start": "cd Server && npm start",
+    "dev": "concurrently \"cd Client && npm run dev\" \"cd Server && npm run dev\""
   },
   "repository": {
     "type": "git",
