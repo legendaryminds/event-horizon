@@ -84,10 +84,10 @@
   },
   "scripts": {
     "install-client": "cd client && npm install",
-    "install-server": "cd server && npm install",
+    "install-server": "npm install",
     "build": "cd client && npm run build",
-    "start": "npm run build && cd server && node server.js",
-    "dev": "concurrently \"cd client && npm run dev\" \"cd server && nodemon server.js\""
+    "start": "npm run build && node server.js",
+    "dev": "concurrently \"cd client && npm run dev\" \"nodemon server.js\""
   },
   "keywords": [],
   "author": "",
