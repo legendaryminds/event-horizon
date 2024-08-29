@@ -5,39 +5,39 @@ const Schema = mongoose.Schema;
 const eventSchema = new Schema({
   title: {
     type: String,
-    required: true, // Title of the event is required
+    required: true, 
   },
   description: {
     type: String,
-    required: true, // Description of the event is required
+    required: true, 
   },
   date: {
     type: Date,
-    required: true, // Date of the event is required
+    required: true,
   },
   location: {
     type: String,
-    required: true, // Location of the event is required
+    required: true,
   },
   venue: {
     type: String,
-    required: true, // Venue of the event is required
+    required: true,
   },
   ticketPrice: {
     type: Number,
-    required: true, // Ticket price is required
+    required: true,
   },
   category: {
     type: String,
-    required: true, // Category of the event is required
+    required: true,
   },
   genre: {
     type: String,
-    required: true, // Genre of the event is required
+    required: true,
   },
   userId: {
     type: Schema.Types.ObjectId,
-    ref: "User", // Reference to the user who created the event
+    ref: "User",
     required: true,
   },
 });

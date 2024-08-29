@@ -5,25 +5,25 @@ const Schema = mongoose.Schema;
 const attendeeSchema = new Schema({
   eventId: {
     type: Schema.Types.ObjectId,
-    ref: "Event", // Reference to the event
+    ref: "Event",
     required: true,
   },
   userId: {
     type: Schema.Types.ObjectId,
-    ref: "User", // Reference to the user
+    ref: "User",
     required: true,
   },
   name: {
     type: String,
-    required: true, // Attendee's name is required
+    required: true,
   },
   email: {
     type: String,
-    required: true, // Attendee's email is required
+    required: true,
   },
   registeredAt: {
     type: Date,
-    default: Date.now, // Timestamp for when the attendee registered
+    default: Date.now,
   },
 });
 

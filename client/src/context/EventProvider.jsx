@@ -1,4 +1,3 @@
-// EventProvider.jsx
 import React, { createContext, useState, useEffect, useCallback, useContext, useRef } from "react";
 import axios from "axios";
 import { AuthContext } from "./AuthProvider";
@@ -53,9 +52,9 @@ const EventProvider = ({ children }) => {
   // Function to create a new event
   const createEvent = useCallback(async (eventData) => {
     try {
-      const res = await eventAxios.post("/events", eventData); // Make POST request to create event
+      const res = await eventAxios.post("/events", eventData); 
       console.log("Event created:", res.data);
-      setUserEvents((prev) => [...prev, res.data]); // Update userEvents state with the new event
+      setUserEvents((prev) => [...prev, res.data]); 
     } catch (error) {
       console.error("Error creating event", error);
     }
@@ -66,7 +65,7 @@ const EventProvider = ({ children }) => {
     try {
       const res = await eventAxios.put(`/events/${id}`, updatedEvent);
       setUserEvents(prevEvents => prevEvents.map(event => (event._id === id ? res.data : event)));
-      getEvents(); // Refresh all events if necessary
+      getEvents();
     } catch (error) {
       console.error("Error updating event", error);
     }
@@ -77,7 +76,7 @@ const EventProvider = ({ children }) => {
     try {
       await eventAxios.delete(`/events/${id}`);
       setUserEvents(prevEvents => prevEvents.filter(event => event._id !== id));
-      getEvents(); // Refresh all events if necessary
+      getEvents(); 
     } catch (error) {
       console.error("Error deleting event", error);
     }

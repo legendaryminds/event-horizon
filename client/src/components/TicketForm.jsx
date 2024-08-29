@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const TicketForm = () => {
   const { createTicket } = useContext(TicketContext);
-  const { id } = useParams(); // Get the eventId from the URL
+  const { id } = useParams(); 
   const [ticketData, setTicketData] = useState({
     name: "",
     email: "",

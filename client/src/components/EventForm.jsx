@@ -7,7 +7,6 @@ const categories = {
   Art: ["Exhibition", "Fair", "Gallery", "Street Art"],
   Dance: ["Ballet", "Burlesque", "Hip Hop", "Pole", "Salsa"],
   Theater: ["Comedy", "Drama", "Musical", "Vaudeville"],
-  // Add more categories and genres as needed
 };
 
 const EventForm = ({ eventToEdit, clearEdit, updateEvent }) => {
@@ -18,8 +17,8 @@ const EventForm = ({ eventToEdit, clearEdit, updateEvent }) => {
     description: "",
     date: "",
     location: "",
-    venue: "",  // Added venue field
-    ticketPrice: "", // Ticket price field
+    venue: "",  
+    ticketPrice: "", 
     category: "",
     genre: "",
   };
@@ -31,10 +30,10 @@ const EventForm = ({ eventToEdit, clearEdit, updateEvent }) => {
       setFormData({
         title: eventToEdit.title,
         description: eventToEdit.description,
-        date: eventToEdit.date.slice(0, 10), // Format date for input
+        date: eventToEdit.date.slice(0, 10), 
         location: eventToEdit.location,
-        venue: eventToEdit.venue,  // Populate venue field
-        ticketPrice: eventToEdit.ticketPrice, // Populate ticket price field
+        venue: eventToEdit.venue,  
+        ticketPrice: eventToEdit.ticketPrice, 
         category: eventToEdit.category,
         genre: eventToEdit.genre,
       });

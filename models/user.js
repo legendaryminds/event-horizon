@@ -16,11 +16,11 @@ const userSchema = new Schema({
   },
   memberSince: {
     type: Date,
-    default: Date.now, // Default to the current date
+    default: Date.now,
   },
   isAdmin: {
     type: Boolean,
-    default: false, // Default to false, indicating the user is not an admin
+    default: false,
   },
 });
 
@@ -46,7 +46,7 @@ userSchema.methods.checkPassword = async function (password) {
 
 // Method to remove the password from the user object before sending it to the client
 userSchema.methods.withoutPassword = function () {
-  const user = this.toObject(); // Using the built-in toObject method here
+  const user = this.toObject();
   delete user.password;
   return user;
 };

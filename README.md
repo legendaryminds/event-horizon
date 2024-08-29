@@ -13,10 +13,10 @@ Event Horizon is a full-stack web application designed to manage and promote eve
 - Integration with External APIs: Enhance functionality with third-party services.
 
 ### Technologies
-- Frontend: React, React Router, Context API, Axios.
-- Backend: Node.js, Express, Mongoose, MongoDB.
+- Frontend: Javascript, React, React Router, Context API, Axios.
+- Backend: Javascript, Node.js, Express, Mongoose, MongoDB.
 - Authentication: JWT, express-jwt, bcrypt, dotenv.
-- Deployment: Heroku or similar platform.
+- Deployment: Render or similar platform.
 
 ### Pages
 1. **Home Page**: Introduction and overview of the application.

@@ -1,10 +1,10 @@
 // EventList.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import EventForm from "./EventForm"; // Import EventForm
+import EventForm from "./EventForm"; 
 
 const EventList = ({ events, onEdit, onDelete, eventToEdit, clearEdit, updateEvent }) => {
-  const [editEventId, setEditEventId] = useState(null); // State to track which event is being edited
+  const [editEventId, setEditEventId] = useState(null); 
 
   const handleEditClick = (event) => {
     setEditEventId(event._id);

@@ -12,24 +12,24 @@ attendeeRouter.use(
 // Route to add a new attendee
 attendeeRouter.post("/", async (req, res, next) => {
   try {
-    req.body.userId = req.auth._id; // Set the userId from the authenticated user
-    const newAttendee = new Attendee(req.body); // Create a new attendee with the request body
-    const savedAttendee = await newAttendee.save(); // Save the new attendee to the database
-    return res.status(201).send(savedAttendee); // Send the saved attendee back to the client
+    req.body.userId = req.auth._id;
+    const newAttendee = new Attendee(req.body); 
+    const savedAttendee = await newAttendee.save();
+    return res.status(201).send(savedAttendee);
   } catch (error) {
     res.status(500);
-    return next(error); // Pass the error to the error handler
+    return next(error);
   }
 });
 
 // Route to get all attendees for a specific event
 attendeeRouter.get("/:eventId", async (req, res, next) => {
   try {
-    const attendees = await Attendee.find({ eventId: req.params.eventId }); // Find attendees by eventId
-    return res.status(200).send(attendees); // Send the attendees back to the client
+    const attendees = await Attendee.find({ eventId: req.params.eventId });
+    return res.status(200).send(attendees); 
   } catch (error) {
     res.status(500);
-    return next(error); // Pass the error to the error handler
+    return next(error);
   }
 });
 
@@ -37,14 +37,14 @@ attendeeRouter.get("/:eventId", async (req, res, next) => {
 attendeeRouter.put("/:attendeeId", async (req, res, next) => {
   try {
     const updatedAttendee = await Attendee.findOneAndUpdate(
-      { _id: req.params.attendeeId, userId: req.auth._id }, // Find the attendee by attendeeId and userId
-      req.body, // Update the attendee with the request body
-      { new: true } // Return the updated attendee
+      { _id: req.params.attendeeId, userId: req.auth._id }, 
+      req.body,
+      { new: true }
     );
-    return res.status(200).send(updatedAttendee); // Send the updated attendee back to the client
+    return res.status(200).send(updatedAttendee);
   } catch (error) {
     res.status(500);
-    return next(error); // Pass the error to the error handler
+    return next(error);
   }
 });
 
@@ -52,17 +52,17 @@ attendeeRouter.put("/:attendeeId", async (req, res, next) => {
 attendeeRouter.delete("/:attendeeId", async (req, res, next) => {
   try {
     const deletedAttendee = await Attendee.findOneAndDelete({
-      _id: req.params.attendeeId, // Find the attendee by attendeeId
-      userId: req.auth._id, // Ensure the authenticated user is the owner of the attendee record
+      _id: req.params.attendeeId,
+      userId: req.auth._id,
     });
     return res
       .status(200)
       .send(
         `Attendee with id ${req.params.attendeeId} was successfully deleted.`
-      ); // Send a success message back to the client
+      ); 
   } catch (error) {
     res.status(500);
-    return next(error); // Pass the error to the error handler
+    return next(error);
   }
 });
 

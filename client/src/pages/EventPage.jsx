@@ -33,7 +33,7 @@ const EventPage = () => {
       <p>{event.description}</p>
       <p>{format(new Date(event.date), 'MM/dd/yyyy')}</p>
       <p>{event.location}</p>
-      <p>{event.venue}</p> {/* Add venue information here */}
+      <p>{event.venue}</p> 
       <p>Ticket Price: {event.ticketPrice > 0 ? `$${event.ticketPrice}` : "Free"}</p>
       <TicketForm />
     </div>

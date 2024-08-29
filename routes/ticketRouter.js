@@ -63,7 +63,7 @@ ticketRouter.get("/user", async (req, res, next) => {
     const tickets = await Ticket.find({ userId: req.auth._id });
     if (!tickets.length) {
       console.log("No tickets found for user:", req.auth._id);
-      return res.status(200).send([]); // Send empty array when no tickets found
+      return res.status(200).send([]);
     } else {
       console.log("Tickets found:", tickets);
     }

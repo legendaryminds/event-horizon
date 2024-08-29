@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 import { AuthContext } from "../context/AuthProvider";
 
 const Auth = () => {
   const { signup, login } = useContext(AuthContext);
   const [credentials, setCredentials] = useState({ username: "", password: "" });
   const [isMember, setIsMember] = useState(true);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
